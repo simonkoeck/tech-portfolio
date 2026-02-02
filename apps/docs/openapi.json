@@ -650,51 +650,6 @@
           }
         }
       }
-    },
-    "/security/stats": {
-      "get": {
-        "tags": [
-          "Security"
-        ],
-        "summary": "Get security research statistics",
-        "description": "Returns statistics about security research",
-        "responses": {
-          "200": {
-            "description": "Security statistics",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "totalCVEs": {
-                      "type": "number",
-                      "example": 2
-                    },
-                    "totalBugBounties": {
-                      "type": "number",
-                      "example": 1
-                    },
-                    "criticalFindings": {
-                      "type": "number",
-                      "example": 2
-                    },
-                    "highFindings": {
-                      "type": "number",
-                      "example": 1
-                    }
-                  },
-                  "required": [
-                    "totalCVEs",
-                    "totalBugBounties",
-                    "criticalFindings",
-                    "highFindings"
-                  ]
-                }
-              }
-            }
-          }
-        }
-      }
     }
   }
 }

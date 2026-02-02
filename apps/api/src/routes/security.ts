@@ -172,42 +172,4 @@ app.openapi(getBugBountyRoute, (c) => {
   return c.json(bugBounty, 200);
 });
 
-// GET /security/stats - Get security stats
-const securityStatsRoute = createRoute({
-  method: "get",
-  path: "/security/stats",
-  tags: ["Security"],
-  summary: "Get security research statistics",
-  description: "Returns statistics about security research",
-  responses: {
-    200: {
-      description: "Security statistics",
-      content: {
-        "application/json": {
-          schema: z.object({
-            totalCVEs: z.number().openapi({ example: 2 }),
-            totalBugBounties: z.number().openapi({ example: 1 }),
-            criticalFindings: z.number().openapi({ example: 2 }),
-            highFindings: z.number().openapi({ example: 1 }),
-          }),
-        },
-      },
-    },
-  },
-});
-
-app.openapi(securityStatsRoute, (c) => {
-  const allFindings = [
-    ...cves.map((c) => c.severity),
-    ...bugBounties.map((b) => b.severity),
-  ];
-
-  return c.json({
-    totalCVEs: cves.length,
-    totalBugBounties: bugBounties.length,
-    criticalFindings: allFindings.filter((s) => s === "critical").length,
-    highFindings: allFindings.filter((s) => s === "high").length,
-  });
-});
-
 export default app;

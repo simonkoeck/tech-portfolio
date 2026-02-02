@@ -41,8 +41,7 @@
               "api-reference/security/list-cves",
               "api-reference/security/get-cve",
               "api-reference/security/list-bug-bounties",
-              "api-reference/security/get-bug-bounty",
-              "api-reference/security/stats"
+              "api-reference/security/get-bug-bounty"
             ]
           }
         ]
