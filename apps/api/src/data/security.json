@@ -1,0 +1,46 @@
+{
+  "cves": [
+    {
+      "id": "CVE-2026-24472",
+      "title": "Cache Control Bypass in Hono",
+      "description": "Information disclosure vulnerability in Hono's Cache Middleware caused by improper handling of HTTP cache control directives. The middleware does not respect standard cache control headers such as Cache-Control: private or Cache-Control: no-store, which may result in private or authenticated responses being cached and subsequently exposed to unauthorized users.",
+      "severity": "high",
+      "product": "hono",
+      "vendor": "honojs",
+      "affectedVersions": "< 4.11.7",
+      "fixedVersion": "4.11.7",
+      "publishedAt": "2026-01-27",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-24472",
+        "https://github.com/honojs/hono/security/advisories/GHSA-9c46-5j9v-mcfq"
+      ]
+    },
+    {
+      "id": "CVE-2026-23527",
+      "title": "HTTP Request Smuggling in H3",
+      "description": "Critical HTTP Request Smuggling vulnerability in H3 framework. The readRawBody function performs a strict case-sensitive check for the Transfer-Encoding header, explicitly looking for 'chunked', but per the RFC, this header should be case-insensitive. This allows attackers to bypass security controls via request smuggling.",
+      "severity": "critical",
+      "product": "h3",
+      "vendor": "h3js",
+      "affectedVersions": "< 1.15.5",
+      "fixedVersion": "1.15.5",
+      "publishedAt": "2026-01-15",
+      "references": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-23527",
+        "https://github.com/h3js/h3/security/advisories"
+      ]
+    }
+  ],
+  "bugBounties": [
+    {
+      "id": "bb-linktree-2025",
+      "title": "Critical Vulnerability in Linktree",
+      "description": "Discovered and responsibly disclosed a critical security vulnerability with maximum CVSS score of 10.0.",
+      "company": "Linktree",
+      "severity": "critical",
+      "cvss": 10.0,
+      "status": "resolved",
+      "reportedAt": "2025-01-01"
+    }
+  ]
+}

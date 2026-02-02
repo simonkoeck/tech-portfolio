@@ -2,6 +2,7 @@ import { OpenAPIHono } from "@hono/zod-openapi";
 import { cors } from "hono/cors";
 import projectsRoutes from "./routes/projects.js";
 import healthRoutes from "./routes/health.js";
+import securityRoutes from "./routes/security.js";
 
 const app = new OpenAPIHono();
 
@@ -11,6 +12,7 @@ app.use("/*", cors());
 // Register routes
 app.route("/", projectsRoutes);
 app.route("/", healthRoutes);
+app.route("/", securityRoutes);
 
 // OpenAPI documentation endpoint
 app.doc("/doc", (c) => {

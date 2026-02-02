@@ -34,6 +34,16 @@
           {
             "group": "Health",
             "pages": ["api-reference/health/health-check"]
+          },
+          {
+            "group": "Security",
+            "pages": [
+              "api-reference/security/list-cves",
+              "api-reference/security/get-cve",
+              "api-reference/security/list-bug-bounties",
+              "api-reference/security/get-bug-bounty",
+              "api-reference/security/stats"
+            ]
           }
         ]
       }
