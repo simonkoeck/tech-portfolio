@@ -1,0 +1,24 @@
+[
+  {
+    "id": "portfolio-api",
+    "title": "Portfolio API",
+    "description": "RESTful API for portfolio projects with OpenAPI documentation",
+    "techStack": ["TypeScript", "Hono", "Zod", "OpenAPI"],
+    "category": "api",
+    "status": "completed",
+    "featured": true,
+    "links": {
+      "github": "https://github.com/simonkoeck/portfolio-api"
+    },
+    "dates": {
+      "started": "2024-01-15",
+      "completed": "2024-02-01"
+    },
+    "highlights": [
+      "Type-safe routes with Zod validation",
+      "Automatic OpenAPI spec generation",
+      "Mintlify documentation integration"
+    ],
+    "order": 1
+  }
+]

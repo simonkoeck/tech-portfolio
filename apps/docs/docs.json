@@ -8,11 +8,34 @@
     "dark": "#8b5cf6"
   },
   "favicon": "/favicon.svg",
+  "openapi": "openapi.json",
+  "tabs": [
+    { "name": "About", "url": "/" },
+    { "name": "API Reference", "url": "api-reference" }
+  ],
   "navigation": {
     "groups": [
       {
         "group": "About me",
         "pages": ["index", "changelog"]
+      },
+      {
+        "group": "API Reference",
+        "pages": [
+          "api-reference/introduction",
+          {
+            "group": "Projects",
+            "pages": [
+              "api-reference/projects/list-projects",
+              "api-reference/projects/get-featured-projects",
+              "api-reference/projects/get-project-by-id"
+            ]
+          },
+          {
+            "group": "Health",
+            "pages": ["api-reference/health/health-check"]
+          }
+        ]
       }
     ],
     "global": {

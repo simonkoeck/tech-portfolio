@@ -1,0 +1,45 @@
+---
+title: Introduction
+description: "API for accessing portfolio projects programmatically"
+---
+
+# Portfolio API
+
+The Portfolio API provides programmatic access to my projects, built with [Hono](https://hono.dev) and deployed on Cloudflare Workers.
+
+## Base URL
+
+```
+https://api.simonkoeck.com
+```
+
+## Authentication
+
+The API is currently public and requires no authentication.
+
+## Features
+
+- **Type-safe**: Built with TypeScript and Zod validation
+- **OpenAPI**: Auto-generated documentation from code
+- **Fast**: Deployed on Cloudflare's edge network
+- **Filterable**: Query projects by tech stack, category, or status
+
+## Quick Start
+
+Fetch all projects:
+
+```bash
+curl https://api.simonkoeck.com/projects
+```
+
+Get featured projects:
+
+```bash
+curl https://api.simonkoeck.com/projects/featured
+```
+
+Filter by technology:
+
+```bash
+curl "https://api.simonkoeck.com/projects?tech=TypeScript"
+```

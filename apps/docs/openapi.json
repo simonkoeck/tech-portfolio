@@ -1,0 +1,270 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Portfolio API",
+    "version": "1.0.0",
+    "description": "RESTful API for Simon Köck's portfolio projects"
+  },
+  "servers": [
+    {
+      "url": "https://api.simonkoeck.com",
+      "description": "Production"
+    }
+  ],
+  "paths": {
+    "/projects": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "List all projects",
+        "description": "Returns a list of all projects with optional filtering",
+        "parameters": [
+          {
+            "name": "tech",
+            "in": "query",
+            "description": "Filter by technology in tech stack",
+            "schema": {
+              "type": "string",
+              "example": "TypeScript"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Filter by category",
+            "schema": {
+              "type": "string",
+              "enum": ["web", "api", "cli", "library", "mobile", "other"]
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter by status",
+            "schema": {
+              "type": "string",
+              "enum": ["completed", "in-progress", "archived", "concept"]
+            }
+          },
+          {
+            "name": "featured",
+            "in": "query",
+            "description": "Filter by featured status (true/false)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of projects",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Project"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/projects/featured": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Get featured projects",
+        "description": "Returns a list of featured projects",
+        "responses": {
+          "200": {
+            "description": "List of featured projects",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Project"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/projects/{id}": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Get a project by ID",
+        "description": "Returns a single project by its ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "portfolio-api"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Project found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Project"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Project not found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": ["Health"],
+        "summary": "Health check",
+        "description": "Returns the health status of the API",
+        "responses": {
+          "200": {
+            "description": "API is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "timestamp": {
+                      "type": "string",
+                      "example": "2024-01-15T12:00:00.000Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Project": {
+        "type": "object",
+        "required": ["id", "title", "description", "techStack", "category", "status", "featured", "links", "dates", "highlights", "order"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "portfolio-api"
+          },
+          "title": {
+            "type": "string",
+            "example": "Portfolio API"
+          },
+          "description": {
+            "type": "string",
+            "example": "RESTful API for portfolio projects with OpenAPI documentation"
+          },
+          "techStack": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": ["TypeScript", "Hono", "Zod", "OpenAPI"]
+          },
+          "category": {
+            "type": "string",
+            "enum": ["web", "api", "cli", "library", "mobile", "other"],
+            "example": "api"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["completed", "in-progress", "archived", "concept"],
+            "example": "completed"
+          },
+          "featured": {
+            "type": "boolean",
+            "example": true
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "github": {
+                "type": "string",
+                "format": "uri"
+              },
+              "live": {
+                "type": "string",
+                "format": "uri"
+              },
+              "demo": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "example": {
+              "github": "https://github.com/simonkoeck/portfolio-api"
+            }
+          },
+          "dates": {
+            "type": "object",
+            "required": ["started"],
+            "properties": {
+              "started": {
+                "type": "string",
+                "example": "2024-01-15"
+              },
+              "completed": {
+                "type": "string",
+                "example": "2024-02-01"
+              },
+              "lastUpdated": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "started": "2024-01-15",
+              "completed": "2024-02-01"
+            }
+          },
+          "highlights": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Type-safe routes with Zod validation",
+              "Automatic OpenAPI spec generation"
+            ]
+          },
+          "order": {
+            "type": "number",
+            "example": 1
+          }
+        }
+      }
+    }
+  }
+}
