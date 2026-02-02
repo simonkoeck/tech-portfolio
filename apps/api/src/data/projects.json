@@ -1,24 +1,195 @@
 [
   {
-    "id": "portfolio-api",
-    "title": "Portfolio API",
-    "description": "RESTful API for portfolio projects with OpenAPI documentation",
-    "techStack": ["TypeScript", "Hono", "Zod", "OpenAPI"],
-    "category": "api",
+    "id": "authfill",
+    "title": "AuthFill",
+    "description": "A browser extension that allows you to verify your email with one click, streamlining 2FA and OTP flows.",
+    "techStack": ["TypeScript", "Browser Extension", "OAuth"],
+    "category": "web",
     "status": "completed",
     "featured": true,
     "links": {
-      "github": "https://github.com/simonkoeck/portfolio-api"
+      "github": "https://github.com/authfill/authfill",
+      "live": "https://authfill.com"
     },
     "dates": {
-      "started": "2024-01-15",
-      "completed": "2024-02-01"
+      "started": "2025-06-24"
     },
     "highlights": [
-      "Type-safe routes with Zod validation",
-      "Automatic OpenAPI spec generation",
-      "Mintlify documentation integration"
+      "One-click email verification",
+      "2FA and OTP automation",
+      "Password reset streamlining"
     ],
     "order": 1
+  },
+  {
+    "id": "git-exposed",
+    "title": "Git Exposed",
+    "description": "Security tool that leverages unintended exposure of .git directories to clone and reconstruct complete projects, revealing potential vulnerabilities.",
+    "techStack": ["Shell", "Git", "Security"],
+    "category": "cli",
+    "status": "completed",
+    "featured": true,
+    "links": {
+      "github": "https://github.com/simonkoeck/git-exposed"
+    },
+    "dates": {
+      "started": "2023-07-11",
+      "completed": "2023-07-11"
+    },
+    "highlights": [
+      "32+ GitHub stars",
+      "Pentesting and ethical hacking tool",
+      "Reconstructs projects from exposed .git directories"
+    ],
+    "order": 2
+  },
+  {
+    "id": "code-execution-engine",
+    "title": "Code Execution Engine",
+    "description": "A fast and secure code execution engine in JavaScript, using LXC containers for sandboxed execution.",
+    "techStack": ["TypeScript", "Node.js", "LXC", "Shell"],
+    "category": "library",
+    "status": "completed",
+    "featured": true,
+    "links": {
+      "github": "https://github.com/simonkoeck/code-execution-engine",
+      "live": "https://www.npmjs.com/package/code-execution-engine"
+    },
+    "dates": {
+      "started": "2021-03-25"
+    },
+    "highlights": [
+      "Published on npm",
+      "Secure sandboxed code execution",
+      "LXC container isolation"
+    ],
+    "order": 3
+  },
+  {
+    "id": "findthissong",
+    "title": "FindThisSong",
+    "description": "An Instagram bot that identifies songs used in Reels using audio recognition.",
+    "techStack": ["TypeScript", "Instagram API", "Audio Recognition"],
+    "category": "other",
+    "status": "completed",
+    "featured": true,
+    "links": {
+      "github": "https://github.com/simonkoeck/findthissong"
+    },
+    "dates": {
+      "started": "2025-11-09"
+    },
+    "highlights": [
+      "Automated song identification",
+      "Instagram Reels integration",
+      "Audio fingerprinting"
+    ],
+    "order": 4
+  },
+  {
+    "id": "gather-linux",
+    "title": "Gather Linux",
+    "description": "An unofficial, optimized Gather Town client for Linux built with Electron.",
+    "techStack": ["JavaScript", "Electron", "Linux"],
+    "category": "other",
+    "status": "completed",
+    "featured": false,
+    "links": {
+      "github": "https://github.com/simonkoeck/gather-linux"
+    },
+    "dates": {
+      "started": "2026-01-08"
+    },
+    "highlights": [
+      "Native Linux support for Gather Town",
+      "Optimized Electron wrapper",
+      "Cross-platform desktop app"
+    ],
+    "order": 5
+  },
+  {
+    "id": "dino",
+    "title": "Dino",
+    "description": "A Jump 'n' Run game playable directly in your terminal.",
+    "techStack": ["C#", ".NET", "Terminal"],
+    "category": "cli",
+    "status": "completed",
+    "featured": false,
+    "links": {
+      "github": "https://github.com/simonkoeck/dino"
+    },
+    "dates": {
+      "started": "2022-04-22"
+    },
+    "highlights": [
+      "Terminal-based gameplay",
+      "Built with C# and .NET",
+      "Chrome dino game inspired"
+    ],
+    "order": 6
+  },
+  {
+    "id": "taylor-swift-page-cleaner",
+    "title": "Taylor Swift Page Cleaner",
+    "description": "A browser extension that removes Taylor Swift content from web pages.",
+    "techStack": ["JavaScript", "Browser Extension"],
+    "category": "web",
+    "status": "completed",
+    "featured": false,
+    "links": {
+      "github": "https://github.com/simonkoeck/taylor-swift-page-cleaner"
+    },
+    "dates": {
+      "started": "2024-08-23"
+    },
+    "highlights": [
+      "5+ GitHub stars",
+      "Browser extension",
+      "Content filtering"
+    ],
+    "order": 7
+  },
+  {
+    "id": "tech-portfolio",
+    "title": "Tech Portfolio",
+    "description": "A portfolio disguised as developer documentation with a RESTful API.",
+    "techStack": ["TypeScript", "Hono", "Mintlify", "Cloudflare Workers"],
+    "category": "web",
+    "status": "completed",
+    "featured": true,
+    "links": {
+      "github": "https://github.com/simonkoeck/tech-portfolio",
+      "live": "https://simonkoeck.com"
+    },
+    "dates": {
+      "started": "2025-09-24"
+    },
+    "highlights": [
+      "Documentation-style portfolio",
+      "OpenAPI spec generation",
+      "Edge-deployed API"
+    ],
+    "order": 8
+  },
+  {
+    "id": "nixos-config",
+    "title": "NixOS Configuration",
+    "description": "Personal NixOS configuration for reproducible system setup.",
+    "techStack": ["Nix", "NixOS", "Linux"],
+    "category": "other",
+    "status": "in-progress",
+    "featured": false,
+    "links": {
+      "github": "https://github.com/simonkoeck/nixos"
+    },
+    "dates": {
+      "started": "2025-12-29"
+    },
+    "highlights": [
+      "Declarative system configuration",
+      "Reproducible builds",
+      "Personal dotfiles"
+    ],
+    "order": 9
   }
 ]
